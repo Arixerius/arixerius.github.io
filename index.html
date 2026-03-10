@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emre Kara | Game Developer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-split {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border-color);
+            box-shadow: 0 0 20px rgba(168, 199, 250, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-split {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 20px;
+            }
+            .hero-text {
+                max-width: 100%;
+            }
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            background: #1e1f20;
+            padding: 30px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        .slider-track {
+            display: flex;
+            width: calc(380px * 14);
+            animation: scroll 30s linear infinite;
+        }
+
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        .slider-track a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 380px;
+            padding: 0 15px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }
+
+        .slider-track a:hover {
+            transform: scale(1.05);
+        }
+
+        .slider-track img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-380px * 7)); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">Arixerius<span>.dev</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="mods.html">Game Mods</a></li>
+            <li><a href="resume.html">Resume</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-split">
+            <div class="hero-text">
+                <h1>Hi, I'm Emre.</h1>
+                <h2>Game Developer (4+ Years)</h2>
+                <p>
+                    I am a game developer specializing in Unity and C#. From developing core mechanics for commercial studio titles to building award-winning Game Jam projects and extensive game overhauls, I focus on robust architectures, scalable systems, and clean code.
+                </p>
+                <div>
+                    <a href="games.html" class="btn">View My Games</a>
+                    <a href="mailto:arixerius.dev@gmail.com" class="btn" style="margin-left: 15px; background: transparent; border: 1px solid var(--accent); color: var(--accent);">Get in Touch</a>
+                </div>
+            </div>
+
+            <img src="sources/EmreKara.jpg" alt="Emre Kara" class="hero-image" onerror="this.style.display='none'">
+        </div>
+    </section>
+
+    <div class="slider-container">
+        <div class="slider-track">
+            <a href="games.html"><img src="sources/games/logo/emberbaneheader.jpg" alt="Emberbane"></a>
+            <a href="games.html"><img src="sources/games/logo/DoppelgangersLogo1.png" alt="Doppelgängers"></a>
+            <a href="games.html"><img src="sources/games/logo/EscapingSlimeLogo1.png" alt="Escaping Slime"></a>
+            <a href="games.html"><img src="sources/games/logo/VaxolusBanner.png" alt="Vaxolus"></a>
+            <a href="games.html"><img src="sources/games/logo/SurviveXBanner.png" alt="SurviveX"></a>
+            <a href="mods.html"><img src="sources/games/logo/HardTruckApocalypseExclusiveModBanner.png" alt="Exclusive Mod"></a>
+            <a href="mods.html"><img src="sources/games/logo/HardTruckApocalypseEMRModBanner.png" alt="EMR Mod"></a>
+
+            <a href="games.html"><img src="sources/games/logo/emberbaneheader.jpg" alt="Emberbane"></a>
+            <a href="games.html"><img src="sources/games/logo/DoppelgangersLogo1.png" alt="Doppelgängers"></a>
+            <a href="games.html"><img src="sources/games/logo/EscapingSlimeLogo1.png" alt="Escaping Slime"></a>
+            <a href="games.html"><img src="sources/games/logo/VaxolusBanner.png" alt="Vaxolus"></a>
+            <a href="games.html"><img src="sources/games/logo/SurviveXBanner.png" alt="SurviveX"></a>
+            <a href="mods.html"><img src="sources/games/logo/HardTruckApocalypseExclusiveModBanner.png" alt="Exclusive Mod"></a>
+            <a href="mods.html"><img src="sources/games/logo/HardTruckApocalypseEMRModBanner.png" alt="EMR Mod"></a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Emre Kara. Crafted with Clean Code.</p>
+</footer>
+
+</body>
+</html>

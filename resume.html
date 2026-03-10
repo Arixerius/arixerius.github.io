@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Emre Kara</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .coming-soon-container {
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .coming-soon-container h1 {
+            color: var(--text-main);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .coming-soon-container p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .hourglass {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: scale(0.95); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0.5; transform: scale(0.95); }
+        }
+        .btn-back {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-back:hover {
+            background-color: rgba(168, 199, 250, 0.1);
+            box-shadow: 0 0 10px rgba(168, 199, 250, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">Arixerius<span>.dev</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="mods.html">Game Mods</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="coming-soon-container">
+            <span class="hourglass">⏳</span>
+            <h1>Resume Update in Progress</h1>
+            <p>
+                I am currently compiling my 4+ years of professional experience, Game Jam awards, and academic background into a new format.
+                <br><br>
+                <strong>Please check back tomorrow to view and download my full CV!</strong>
+            </p>
+            <a href="index.html" class="btn-back">Return to Home</a>
+        </div>
+    </section>
+</main>
+
+<footer style="position: absolute; bottom: 0; width: 100%;">
+    <p>&copy; 2026 Emre Kara. Crafted with Clean Code.</p>
+</footer>
+
+</body>
+</html>

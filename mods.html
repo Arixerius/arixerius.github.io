@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mods | Emre Kara</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .award-text { color: #ffca28; font-weight: 700; margin-bottom: 5px; display: block; font-size: 0.95rem; }
+        .professional-text { color: #a8c7fa; font-weight: 700; margin-bottom: 5px; display: block; font-size: 0.95rem; }
+        .info-text { color: var(--accent); font-style: italic; font-size: 0.9rem; margin-bottom: 5px; display: block; }
+        .date-text { color: #888; font-size: 0.85rem; margin-bottom: 5px; display: block; font-weight: 500; }
+        .platform-text { color: #888; font-size: 0.85rem; margin-bottom: 15px; display: block; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+        .card { background: #1e1f20; padding: 20px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; }
+
+        .card img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+
+        .card-content { flex-grow: 1; display: flex; flex-direction: column; }
+        .card-description { flex-grow: 1; }
+
+        .btn-game { display: inline-block; padding: 10px 20px; background-color: var(--accent); color: #131314; text-decoration: none; border-radius: 5px; font-weight: 700; text-align: center; margin-top: 15px; transition: 0.3s; border: none; cursor: pointer; width: 100%; box-sizing: border-box; }
+        .btn-game:hover { background-color: #8ab4f8; box-shadow: 0 0 10px rgba(168, 199, 250, 0.3); }
+
+        .filter-container { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+        .filter-btn { background: transparent; color: var(--text-muted); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.9rem; }
+        .filter-btn:hover { border-color: var(--accent); color: var(--text-main); }
+        .filter-btn.active { background: var(--accent); color: #131314; border-color: var(--accent); font-weight: bold; }
+
+        .tags-container { margin-top: 15px; }
+        .tag { background: rgba(168, 199, 250, 0.1); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; display: inline-block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">Arixerius<span>.dev</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="mods.html" class="active">Game Mods</a></li>
+            <li><a href="resume.html">Resume</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <h1 style="color: var(--text-main); margin-bottom: 10px;">Game Mods</h1>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">
+            A collection of extensive modifications and overhauls I developed, demonstrating my ability to reverse-engineer, expand, and maintain complex game systems.
+        </p>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterGames('all')">All Mods</button>
+            <button class="filter-btn" onclick="filterGames('hta')">Hard Truck Apocalypse Mods</button>
+        </div>
+
+        <div class="grid" id="gameGrid">
+
+            <div class="card" data-category="hta">
+                <img src="sources/games/logo/HardTruckApocalypseExclusiveModBanner.png" alt="ExclusiveMod V2.1" onerror="this.src='https://via.placeholder.com/600x337/1e1f20/a8c7fa?text=ExclusiveMod+V2.1'">
+                <div class="card-content">
+                    <h3>Exclusive Mod V2.1</h3>
+                    <span class="info-text">Hard Truck Apocalypse / Ex Machina</span>
+                    <span class="info-text">Lead Mod Developer - Story & Systems Expansion</span>
+                    <span class="date-text">📅 Released: 2020</span>
+                    <span class="platform-text">🎮 Platform: Windows</span>
+
+                    <div class="card-description">
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Taking the base game to the next level. This mod introduces entirely new maps, cinematic scenes, and a branching storyline based on player choices. Features new side missions, Arcade vehicles, and specially modified weapons.
+                        </p>
+                    </div>
+
+                    <div class="tags-container">
+                        <span class="tag">Branching Story</span> <span class="tag">Level Design</span> <span class="tag">Quest Design</span> <span class="tag">Content Expansion</span>
+                    </div>
+                    <a href="https://emreki.itch.io/hard-truck-apocalypse-exclusive-mod" target="_blank" class="btn-game">Download on Itch.io</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="hta">
+                <img src="sources/games/logo/HardTruckApocalypseEMRModBanner.png" alt="EMRMod V 2020.4" onerror="this.src='https://via.placeholder.com/600x337/1e1f20/a8c7fa?text=EMRMod+V2020.4'">
+                <div class="card-content">
+                    <h3>EMR Mod V2020.4</h3>
+                    <span class="info-text">Hard Truck Apocalypse / Ex Machina</span>
+                    <span class="info-text">Solo Modder - 1.5 Years in Development</span>
+                    <span class="date-text">📅 Released: 2020</span>
+                    <span class="platform-text">🎮 Platform: Windows</span>
+
+                    <div class="card-description">
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            My first major mod project, developed over 1.5 years. A massive overhaul that transforms most maps, introduces winter seasons, updates the interface, and deeply tweaks vehicle modifications and dynamic health regeneration mechanics.
+                        </p>
+                    </div>
+
+                    <div class="tags-container">
+                        <span class="tag">Total Overhaul</span> <span class="tag">Game Balance</span> <span class="tag">UI/UX</span> <span class="tag">Mechanics Tweaking</span>
+                    </div>
+                    <a href="https://emreki.itch.io/hard-truck-apocalypse-emr-mod" target="_blank" class="btn-game">Download on Itch.io</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Emre Kara. Crafted with Clean Code.</p>
+</footer>
+
+<script>
+    function filterGames(category) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

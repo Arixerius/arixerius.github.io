@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games | Emre Kara</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .award-text { color: #ffca28; font-weight: 700; margin-bottom: 5px; display: block; font-size: 0.95rem; }
+        .professional-text { color: #a8c7fa; font-weight: 700; margin-bottom: 5px; display: block; font-size: 0.95rem; }
+        .info-text { color: var(--accent); font-style: italic; font-size: 0.9rem; margin-bottom: 5px; display: block; }
+        .date-text { color: #888; font-size: 0.85rem; margin-bottom: 5px; display: block; font-weight: 500; }
+        .platform-text { color: #888; font-size: 0.85rem; margin-bottom: 15px; display: block; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
+        .card { background: #1e1f20; padding: 20px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; }
+
+        .card img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+
+        .card-content { flex-grow: 1; display: flex; flex-direction: column; }
+        .card-description { flex-grow: 1; }
+
+        .btn-game { display: inline-block; padding: 10px 20px; background-color: var(--accent); color: #131314; text-decoration: none; border-radius: 5px; font-weight: 700; text-align: center; margin-top: 15px; transition: 0.3s; border: none; cursor: pointer; width: 100%; box-sizing: border-box; }
+        .btn-game:hover { background-color: #8ab4f8; box-shadow: 0 0 10px rgba(168, 199, 250, 0.3); }
+
+        .filter-container { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+        .filter-btn { background: transparent; color: var(--text-muted); border: 1px solid var(--border-color); padding: 8px 16px; border-radius: 20px; cursor: pointer; transition: 0.3s; font-size: 0.9rem; }
+        .filter-btn:hover { border-color: var(--accent); color: var(--text-main); }
+        .filter-btn.active { background: var(--accent); color: #131314; border-color: var(--accent); font-weight: bold; }
+
+        .tags-container { margin-top: 15px; }
+        .tag { background: rgba(168, 199, 250, 0.1); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; display: inline-block; margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="index.html" class="logo">Arixerius<span>.dev</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html" class="active">Games</a></li>
+            <li><a href="mods.html">Game Mods</a></li>
+            <li><a href="resume.html">Resume</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <h1 style="color: var(--text-main); margin-bottom: 10px;">Games</h1>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">
+            A showcase of games developed solo or in a team, featuring professional commercial projects, award-winning Game Jam entries, and university projects.
+        </p>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterGames('all')">All Projects</button>
+            <button class="filter-btn" onclick="filterGames('professional')">Professional</button>
+            <button class="filter-btn" onclick="filterGames('gamejam')">Game Jams</button>
+            <button class="filter-btn" onclick="filterGames('university')">University Projects</button>
+        </div>
+
+        <div class="grid" id="gameGrid">
+
+            <div class="card" data-category="professional">
+                <img src="sources/games/logo/emberbaneheader.jpg" alt="Emberbane" onerror="this.src='https://via.placeholder.com/600x337/1e1f20/a8c7fa?text=Emberbane'">
+                <div class="card-content">
+                    <h3>Emberbane</h3>
+                    <span class="professional-text">💎 Hamlet Games Project</span>
+                    <span class="info-text">Game Developer (4+ Years)</span>
+                    <span class="info-text">Collaborated on player mechanics, mob mechanics, traps, and early boss systems.</span>
+                    <span class="date-text">📅 Released: February 25, 2026</span>
+                    <span class="platform-text">🎮 Platform: PC (Steam)</span>
+
+                    <div class="card-description">
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Harness the power of four elements - fire, water, earth, and air - as you traverse the lands of the gods in a tale centered on revenge and the turmoil it brings.
+                        </p>
+                    </div>
+
+                    <div class="tags-container">
+                        <span class="tag">Unity 2D</span> <span class="tag">Metroidvania</span> <span class="tag">Action-Adventure</span> <span class="tag">Single Player</span>
+                    </div>
+                    <a href="https://store.steampowered.com/app/2085310/Emberbane/" target="_blank" class="btn-game">View on Steam</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="gamejam">
+                <img src="sources/games/logo/DoppelgangersLogo1.png" alt="Doppelgängers" onerror="this.src='https://via.placeholder.com/600x337/1e1f20/a8c7fa?text=Doppelgängers'">
+                <div class="card-content">
+                    <h3>Doppelgängers</h3>
+                    <span class="award-text">🏆 Ranked #2 in Magara Jam #4</span>
+                    <span class="info-text">72 Hours Game Jam Project</span>
+                    <span class="info-text">Lead Programmer - Developed core mechanics and systems.</span>
+                    <span class="date-text">📅 Released: 2022</span>
+                    <span class="platform-text">🎮 Platform: Windows</span>
+
+                    <div class="card-description">
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            A story-based puzzle-platformer game where you manipulate parallel universes to save your doppelgängers.
+                            <br><br>
+                            <em>Awards: "Most Mind-Blowing Game" & "Most Compelling Game" (Special Jury Awards)</em>
+                        </p>
+                    </div>
+
+                    <div class="tags-container">
+                        <span class="tag">Unity 2D</span> <span class="tag">Puzzle-Platformer</span> <span class="tag">Meaningful Choices</span> <span class="tag">Game Jam</span>
+                    </div>
+                    <a href="https://sezg.itch.io/doppelgangers" target="_blank" class="btn-game">Download on Itch.io</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="gamejam">
+                <img src="sources/games/logo/EscapingSlimeLogo1.png" alt="Escaping Slime" style="object-fit: contain;" onerror="this.src='https://via.placeholder.com/600x337/1e1f20/a8c7fa?text=Escaping+Slime'">
+                <div class="card-content">
+                    <h3>Escaping Slime</h3>
+                    <span class="award-text">🏆 Ranked #1 in IZTECH HyperJam22'</span>
+                    <span class="info-text">36 Hours Game Jam Project</span>
+                    <span class="info-text">Lead Programmer - Developed core mechanics and systems.</span>
+                    <span class="date-text">📅 Released: 2022</span>
+                    <span class="platform-text">🎮 Platforms: HTML5, Windows, Android</span>
+
+                    <div class="card-description">
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            A fast-paced puzzle-runner game. You must solve puzzles by rotating platforms for your ever-moving slime to reach checkpoints.
+                        </p>
+                    </div>
+
+                    <div class="tags-container">
+                        <span class="tag">Unity 2D</span> <span class="tag">Puzzle-Runner</span> <span class="tag">Pixel Art</span> <span class="tag">Game Jam</span>
+                    </div>
+                    <a href="https://sezg.itch.io/escaping-slime" target="_blank" class="btn-game">Play on Itch.io</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="university">
+                <img src="sources/games/logo/VaxolusBanner.png" alt="Vaxolus" onerror="this.src='https://via.placeholder.com/600x337/1e1f20/a8c7fa?text=Vaxolus'">
+                <div class="card-content">
+                    <h3>Vaxolus</h3>
+                    <span class="info-text">University Graduation Project</span>
+                    <span class="info-text">Solo Developer - All coding by me.</span>
+                    <span class="date-text">📅 Released: 2021</span>
+                    <span class="platform-text">🎮 Platform: Windows</span>
+
+                    <div class="card-description">
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            The 2nd game I've ever developed! An action-packed vehicle combat game where you destroy enemies to upgrade your vehicle and become stronger.
+                        </p>
+                    </div>
+
+                    <div class="tags-container">
+                        <span class="tag">Unity 3D</span> <span class="tag">Action/Shooter</span> <span class="tag">Vehicles</span> <span class="tag">Graduation Project</span>
+                    </div>
+                    <a href="https://emreki.itch.io/vaxolus" target="_blank" class="btn-game">Download on Itch.io</a>
+                </div>
+            </div>
+
+            <div class="card" data-category="university">
+                <img src="sources/games/logo/SurviveXBanner.png" alt="SurviveX" onerror="this.src='https://via.placeholder.com/600x337/1e1f20/a8c7fa?text=SurviveX'">
+                <div class="card-content">
+                    <h3>SurviveX</h3>
+                    <span class="info-text">University First Game Project</span>
+                    <span class="info-text">Solo Developer - All coding by me.</span>
+                    <span class="date-text">📅 Released: 2021</span>
+                    <span class="platform-text">🎮 Platform: Windows</span>
+
+                    <div class="card-description">
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">
+                            My very first game! A survival action game where you defend against zombies using weapons and drivable vehicles. The project that started my game dev adventure.
+                        </p>
+                    </div>
+
+                    <div class="tags-container">
+                        <span class="tag">Unity 3D</span> <span class="tag">FPS / Third-Person</span> <span class="tag">Action/Survival</span> <span class="tag">First Project</span>
+                    </div>
+                    <a href="https://emreki.itch.io/survivex" target="_blank" class="btn-game">Download on Itch.io</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Emre Kara. Crafted with Clean Code.</p>
+</footer>
+
+<script>
+    function filterGames(category) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
