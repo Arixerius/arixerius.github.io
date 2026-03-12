@@ -6,6 +6,27 @@
     <title>Emre Kara | Game Developer</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-icon {
+            color: var(--text-main);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+        }
+
+        .social-icon:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+            opacity: 1;
+        }
+
         .hero-split {
             display: flex;
             align-items: center;
@@ -92,17 +113,8 @@
 </head>
 <body>
 
-<header>
-    <div class="nav-container">
-        <a href="index.html" class="logo">Arixerius<span>.dev</span></a>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="games.html">Games</a></li>
-            <li><a href="mods.html">Game Mods</a></li>
-            <li><a href="resume.html">Resume</a></li>
-        </ul>
-    </div>
-</header>
+<main-header></main-header>
+<script src="js/header.js"></script>
 
 <main>
     <section class="hero">
